@@ -27,11 +27,21 @@ public:
 
 	bool bClose = true;
 
+	UPROPERTY(EditAnywhere)
+	float OpeningTime{1.0};
+
+	UPROPERTY(EditAnywhere)
+	int32 OpenAngle{ 90 };
+
+	FRotator StartAngle{ 0, 0, 0 };
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	void OpenDoor();
+	void OpenDoor(float DeltaTime);
+
+	void CloseDoor(float DeltaTime);
 
 public:	
 	// Called every frame

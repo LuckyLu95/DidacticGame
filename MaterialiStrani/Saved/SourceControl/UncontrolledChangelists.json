@@ -1,0 +1,48 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Mat/M_Candela.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Mat/M_Candela2.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Texture/CandleFire_D.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Texture/CandleFire_S.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Texture/disort_test.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Mat/M_Cloud.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Texture/Noise.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/08/KZWTR3IX3M33OZG2E34WIP.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/8/9W/5O0VPEO0NF80O69R4YE539.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Texture/T_SmokePuff_001.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Mat/MI_Cloud.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/HO/XI55EI4TJY54U3L8LP0QNK.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/J8/7VO6CNOMYON15RGX636AEE.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/7/WQ/D2IRYY7C5ATB8ER3F8EC91.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/OQ/IWQCKNIO6DSRZ6NOZHZ9P9.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/2/6C/9ON1N47F7VDQ3LSDRM6QVA.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Mat/M_DeepRiver.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Mat/M_River.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Texture/T_POM_TilingRocks_01_D.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Texture/T_POM_TilingRocks_01_Disp.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Texture/T_POM_TilingRocks_01_N.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Texture/T_TilingMoss_01_D.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Texture/T_TilingMoss_01_N.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Texture/TilingNoise05.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/7/HV/UFXRYA8VJZ37VHTIDWTBNN.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/Mat/MI_DeepRiver.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/3C/Z4U57VWMD6PK494Z6JMY69.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/2/DC/W0MYKBFF22ZF4X3T6ESRDN.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/2/HK/3P9WF34U25T9P8C29FL6MK.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/41/8A7D0QXKMQW0NMAU1MCZAU.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/NO/Q16V9MS80OUHJNZB8RLNIO.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/VZ/C4NJ7GGOO13EZ91B6K6QAZ.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/K2/FPDMXLMJEKBE1YDI06P1AM.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/P6/K8HQTMD72IIHZSQTOK7OR4.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/4M/YM7ZHIQ9QWDCGL583I4ZKJ.uasset",
+				"E:/GitHub/DidacticGame/MaterialiStrani/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/2/BJ/2ULMRESBXSXLKCFVG2GPP1.uasset"
+			]
+		}
+	]
+}

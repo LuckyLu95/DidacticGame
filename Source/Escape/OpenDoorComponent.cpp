@@ -21,17 +21,39 @@ void UOpenDoorComponent::BeginPlay()
 
 	Trigger = GetWorld()->GetFirstPlayerController()->GetPawn();
 
+	StartAngle = AntaDaAprire->GetComponentRotation();
+
 	// ...
 	
 
 }
 
-void UOpenDoorComponent::OpenDoor()
+void UOpenDoorComponent::OpenDoor(float DeltaTime)
 {
 	FRotator StartRot = AntaDaAprire->GetComponentRotation();
-	StartRot.Yaw -= 90;
 
-	AntaDaAprire->SetWorldRotation(StartRot);
+	if(abs(StartRot.Yaw)<OpenAngle)
+	{ 
+		StartRot.Yaw -= (OpenAngle / OpeningTime * DeltaTime);
+
+		AntaDaAprire->SetWorldRotation(StartRot);
+	}
+	else bClose = false;
+
+	
+}
+
+void UOpenDoorComponent::CloseDoor(float DeltaTime)
+{
+	FRotator StartRot = AntaDaAprire->GetComponentRotation();
+
+	if (StartRot.Yaw < StartAngle.Yaw)
+	{
+		StartRot.Yaw += (OpenAngle / OpeningTime * DeltaTime);
+
+		AntaDaAprire->SetWorldRotation(StartRot);
+	}
+	else bClose = true;
 }
 
 
@@ -44,8 +66,12 @@ void UOpenDoorComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 
 	if(TriggerBox->IsOverlappingActor(Trigger) && bClose)
 	{
-		OpenDoor();
-		bClose = false;
+		OpenDoor(DeltaTime);
+		
+	}
+	else if(!TriggerBox->IsOverlappingActor(Trigger) && !bClose)
+	{
+		CloseDoor(DeltaTime);
 	}
 
 	// ...
