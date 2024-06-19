@@ -19,10 +19,15 @@ void UOpenDoorComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
+	if (!AntaDaAprire) { UE_LOG(LogTemp, Error, TEXT("Manca AntaDaAprire")); return; }
+
+	
+
 	Trigger = GetWorld()->GetFirstPlayerController()->GetPawn();
 
 	StartAngle = AntaDaAprire->GetComponentRotation();
 
+	if (!Trigger) { UE_LOG(LogTemp, Error, TEXT("Manca Trigger")); return; }
 	// ...
 	
 
@@ -32,28 +37,57 @@ void UOpenDoorComponent::OpenDoor(float DeltaTime)
 {
 	FRotator StartRot = AntaDaAprire->GetComponentRotation();
 
-	if(abs(StartRot.Yaw)<OpenAngle)
+	/*if (abs(StartRot.Yaw)<OpenAngle)
 	{ 
 		StartRot.Yaw -= (OpenAngle / OpeningTime * DeltaTime);
 
 		AntaDaAprire->SetWorldRotation(StartRot);
 	}
-	else bClose = false;
+	else bClose = false;*/
 
-	
+	if (OffSetDeg < OpenAngle)
+	{
+		StartRot.Yaw -= (OpenAngle / OpeningTime * DeltaTime);
+
+		OffSetDeg += (OpenAngle / OpeningTime * DeltaTime);
+
+		AntaDaAprire->SetWorldRotation(StartRot);
+	}
+	//else bClosed = false;
+
+
 }
 
 void UOpenDoorComponent::CloseDoor(float DeltaTime)
 {
 	FRotator StartRot = AntaDaAprire->GetComponentRotation();
 
-	if (StartRot.Yaw < StartAngle.Yaw)
+	/*if (StartRot.Yaw < StartAngle.Yaw)
 	{
 		StartRot.Yaw += (OpenAngle / OpeningTime * DeltaTime);
 
 		AntaDaAprire->SetWorldRotation(StartRot);
 	}
-	else bClose = true;
+	else bClose = true;*/
+	//UE_LOG(LogTemp, Error, TEXT("Inizio Timer chiusura.."));
+	
+
+	if (OffSetDeg > 0)
+	{
+		//UE_LOG(LogTemp, Error, TEXT("Chiudendo"));
+		StartRot.Yaw += (OpenAngle / OpeningTime * DeltaTime);
+
+		OffSetDeg -= (OpenAngle / OpeningTime * DeltaTime);
+
+		AntaDaAprire->SetWorldRotation(StartRot);
+	}
+	//else bClosed = true; 
+	
+}
+
+void UOpenDoorComponent::DelayCloseDoor()
+{
+	bClosed = true;
 }
 
 
@@ -64,15 +98,23 @@ void UOpenDoorComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 
 	if (!Trigger || !TriggerBox) return;
 
-	if(TriggerBox->IsOverlappingActor(Trigger) && bClose)
+	if(TriggerBox->IsOverlappingActor(Trigger) && bClosed)
 	{
-		OpenDoor(DeltaTime);
+		bClosed = false;
 		
 	}
-	else if(!TriggerBox->IsOverlappingActor(Trigger) && !bClose)
+	else
 	{
-		CloseDoor(DeltaTime);
+		if (!GetWorld()->GetTimerManager().IsTimerActive(TimerCloseDoor))
+		{
+			GetWorld()->GetTimerManager().SetTimer(TimerCloseDoor, this, &UOpenDoorComponent::DelayCloseDoor, DelayClose, false);
+		}
+
+		
 	}
+
+	if(!bClosed) OpenDoor(DeltaTime);
+	else CloseDoor(DeltaTime);
 
 	// ...
 }

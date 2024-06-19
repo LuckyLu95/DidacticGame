@@ -25,7 +25,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = "OpenDoor")
 	AActor* Trigger;
 
-	bool bClose = true;
+	bool bClosed = true;
 
 	UPROPERTY(EditAnywhere)
 	float OpeningTime{1.0};
@@ -35,6 +35,13 @@ public:
 
 	FRotator StartAngle{ 0, 0, 0 };
 
+	float OffSetDeg{ 0.f };
+
+	UPROPERTY(EditAnywhere)
+	float DelayClose{ 5.f };
+
+	FTimerHandle TimerCloseDoor;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -42,6 +49,8 @@ protected:
 	void OpenDoor(float DeltaTime);
 
 	void CloseDoor(float DeltaTime);
+
+	void DelayCloseDoor();
 
 public:	
 	// Called every frame
